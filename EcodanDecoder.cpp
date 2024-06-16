@@ -285,7 +285,7 @@ void ECODANDECODER::Process0x05(uint8_t *Buffer, EcodanStatus *Status) {
   uint8_t DHWHeatSourcePhase;
 
   //TempDropActive = Buffer[5];     // 0 in Timer or Inhibit, was 7 in on Temp Drop mode (Play)
-  if (Buffer[5] == 7) {
+  if (Buffer[5] != 0) {
     DHWActive = 1;
   } else {
     DHWActive = 0;
